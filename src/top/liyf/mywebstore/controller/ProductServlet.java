@@ -5,7 +5,7 @@ import org.apache.commons.fileupload.FileItem;
 import org.apache.commons.fileupload.FileUploadException;
 import org.apache.commons.fileupload.disk.DiskFileItemFactory;
 import org.apache.commons.fileupload.servlet.ServletFileUpload;
-import top.liyf.mywebstore.domain.Product;
+import top.liyf.mywebstore.entity.Product;
 import top.liyf.mywebstore.service.ProductService;
 import top.liyf.mywebstore.service.impl.ProductServiceImpl;
 import top.liyf.mywebstore.util.Utils;
