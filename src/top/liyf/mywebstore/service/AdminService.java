@@ -1,6 +1,6 @@
 package top.liyf.mywebstore.service;
 
-import top.liyf.mywebstore.domain.Admin;
+import top.liyf.mywebstore.entity.Admin;
 import top.liyf.mywebstore.util.Page;
 
 import java.sql.SQLException;

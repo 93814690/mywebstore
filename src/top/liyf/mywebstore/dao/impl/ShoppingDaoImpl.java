@@ -4,8 +4,8 @@ import org.apache.commons.dbutils.QueryRunner;
 import org.apache.commons.dbutils.handlers.BeanHandler;
 import org.apache.commons.dbutils.handlers.BeanListHandler;
 import top.liyf.mywebstore.dao.ShoppingDao;
-import top.liyf.mywebstore.domain.ShoppingCart;
-import top.liyf.mywebstore.domain.ShoppingCartItem;
+import top.liyf.mywebstore.entity.ShoppingCart;
+import top.liyf.mywebstore.entity.ShoppingCartItem;
 import top.liyf.mywebstore.util.C3P0Util;
 import top.liyf.mywebstore.util.TransactionManager;
 

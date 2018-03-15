@@ -1,7 +1,7 @@
 package top.liyf.mywebstore.service;
 
-import top.liyf.mywebstore.domain.Message;
-import top.liyf.mywebstore.domain.Order;
+import top.liyf.mywebstore.entity.Message;
+import top.liyf.mywebstore.entity.Order;
 
 import java.sql.SQLException;
 import java.util.List;

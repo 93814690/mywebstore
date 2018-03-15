@@ -1,7 +1,7 @@
 package top.liyf.mywebstore.controller;
 
 import org.apache.commons.beanutils.BeanUtils;
-import top.liyf.mywebstore.domain.User;
+import top.liyf.mywebstore.entity.User;
 import top.liyf.mywebstore.service.UserService;
 import top.liyf.mywebstore.service.impl.UserServiceImpl;
 import top.liyf.mywebstore.util.Page;

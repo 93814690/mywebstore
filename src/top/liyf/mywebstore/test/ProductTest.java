@@ -3,7 +3,7 @@ package top.liyf.mywebstore.test;
 import org.junit.Test;
 import top.liyf.mywebstore.dao.ProductDao;
 import top.liyf.mywebstore.dao.impl.ProductDaoImpl;
-import top.liyf.mywebstore.domain.Product;
+import top.liyf.mywebstore.entity.Product;
 
 import java.sql.SQLException;
 import java.util.List;

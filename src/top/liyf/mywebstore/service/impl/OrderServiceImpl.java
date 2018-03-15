@@ -8,7 +8,7 @@ import top.liyf.mywebstore.dao.impl.OrderDaoImpl;
 import top.liyf.mywebstore.dao.impl.OrderItemDaoImpl;
 import top.liyf.mywebstore.dao.impl.ProductDaoImpl;
 import top.liyf.mywebstore.dao.impl.ShoppingDaoImpl;
-import top.liyf.mywebstore.domain.*;
+import top.liyf.mywebstore.entity.*;
 import top.liyf.mywebstore.service.OrderService;
 import top.liyf.mywebstore.util.TransactionManager;
 

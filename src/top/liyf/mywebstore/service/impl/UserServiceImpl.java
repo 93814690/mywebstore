@@ -2,7 +2,7 @@ package top.liyf.mywebstore.service.impl;
 
 import top.liyf.mywebstore.dao.UserDao;
 import top.liyf.mywebstore.dao.impl.UserDaoImpl;
-import top.liyf.mywebstore.domain.User;
+import top.liyf.mywebstore.entity.User;
 import top.liyf.mywebstore.service.UserService;
 import top.liyf.mywebstore.util.Page;
 import top.liyf.mywebstore.util.Utils;

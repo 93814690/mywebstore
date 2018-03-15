@@ -1,11 +1,10 @@
-package top.liyf.mywebstore.domain;
+package top.liyf.mywebstore.entity;
 
-public class ShoppingCartItem {
-
+public class OrderItem {
     private int itemid;
-    private int sid;
+    private String oid;
     private String pid;
-    private int snum;
+    private int buynum;
     private Product product;
 
     public int getItemid() {
@@ -16,12 +15,12 @@ public class ShoppingCartItem {
         this.itemid = itemid;
     }
 
-    public int getSid() {
-        return sid;
+    public String getOid() {
+        return oid;
     }
 
-    public void setSid(int sid) {
-        this.sid = sid;
+    public void setOid(String oid) {
+        this.oid = oid;
     }
 
     public String getPid() {
@@ -32,12 +31,12 @@ public class ShoppingCartItem {
         this.pid = pid;
     }
 
-    public int getSnum() {
-        return snum;
+    public int getBuynum() {
+        return buynum;
     }
 
-    public void setSnum(int snum) {
-        this.snum = snum;
+    public void setBuynum(int buynum) {
+        this.buynum = buynum;
     }
 
     public Product getProduct() {
@@ -50,11 +49,11 @@ public class ShoppingCartItem {
 
     @Override
     public String toString() {
-        return "ShoppingCartItem{" +
+        return "OrderItem{" +
                 "itemid=" + itemid +
-                ", sid=" + sid +
+                ", oid='" + oid + '\'' +
                 ", pid='" + pid + '\'' +
-                ", snum=" + snum +
+                ", buynum=" + buynum +
                 ", product=" + product +
                 '}';
     }

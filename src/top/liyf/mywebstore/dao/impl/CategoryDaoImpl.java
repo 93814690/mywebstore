@@ -5,7 +5,7 @@ import org.apache.commons.dbutils.handlers.BeanHandler;
 import org.apache.commons.dbutils.handlers.BeanListHandler;
 import org.apache.commons.dbutils.handlers.ScalarHandler;
 import top.liyf.mywebstore.dao.CategoryDao;
-import top.liyf.mywebstore.domain.Category;
+import top.liyf.mywebstore.entity.Category;
 import top.liyf.mywebstore.util.C3P0Util;
 
 import java.sql.Connection;

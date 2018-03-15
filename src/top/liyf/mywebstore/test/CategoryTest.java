@@ -4,7 +4,7 @@ import org.junit.Assert;
 import org.junit.Test;
 import top.liyf.mywebstore.dao.CategoryDao;
 import top.liyf.mywebstore.dao.impl.CategoryDaoImpl;
-import top.liyf.mywebstore.domain.Category;
+import top.liyf.mywebstore.entity.Category;
 
 import java.sql.SQLException;
 import java.util.List;

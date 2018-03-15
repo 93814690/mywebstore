@@ -1,6 +1,6 @@
 package top.liyf.mywebstore.dao;
 
-import top.liyf.mywebstore.domain.Admin;
+import top.liyf.mywebstore.entity.Admin;
 
 import java.sql.SQLException;
 import java.util.List;

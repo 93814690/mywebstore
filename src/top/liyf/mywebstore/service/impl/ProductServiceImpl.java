@@ -2,8 +2,8 @@ package top.liyf.mywebstore.service.impl;
 
 import top.liyf.mywebstore.dao.ProductDao;
 import top.liyf.mywebstore.dao.impl.ProductDaoImpl;
-import top.liyf.mywebstore.domain.Category;
-import top.liyf.mywebstore.domain.Product;
+import top.liyf.mywebstore.entity.Category;
+import top.liyf.mywebstore.entity.Product;
 import top.liyf.mywebstore.service.CategoryService;
 import top.liyf.mywebstore.service.ProductService;
 import top.liyf.mywebstore.util.Utils;

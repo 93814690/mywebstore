@@ -1,6 +1,5 @@
 package top.liyf.mywebstore.controller;
 
-import top.liyf.mywebstore.domain.Order;
 import top.liyf.mywebstore.service.OrderService;
 import top.liyf.mywebstore.service.impl.OrderServiceImpl;
 import top.liyf.mywebstore.util.PaymentUtil;

@@ -1,7 +1,7 @@
 package top.liyf.mywebstore.dao;
 
-import top.liyf.mywebstore.domain.ShoppingCart;
-import top.liyf.mywebstore.domain.ShoppingCartItem;
+import top.liyf.mywebstore.entity.ShoppingCart;
+import top.liyf.mywebstore.entity.ShoppingCartItem;
 
 import java.sql.SQLException;
 import java.util.List;

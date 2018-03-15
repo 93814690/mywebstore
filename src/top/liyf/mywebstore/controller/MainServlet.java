@@ -1,7 +1,7 @@
 package top.liyf.mywebstore.controller;
 
 import org.apache.log4j.Logger;
-import top.liyf.mywebstore.domain.Product;
+import top.liyf.mywebstore.entity.Product;
 import top.liyf.mywebstore.service.ProductService;
 import top.liyf.mywebstore.service.impl.ProductServiceImpl;
 

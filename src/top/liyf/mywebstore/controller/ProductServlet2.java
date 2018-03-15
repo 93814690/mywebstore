@@ -1,6 +1,6 @@
 package top.liyf.mywebstore.controller;
 
-import top.liyf.mywebstore.domain.Product;
+import top.liyf.mywebstore.entity.Product;
 import top.liyf.mywebstore.service.ProductService;
 import top.liyf.mywebstore.service.impl.ProductServiceImpl;
 import top.liyf.mywebstore.util.Page;
@@ -12,7 +12,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.sql.SQLException;
-import java.util.List;
 
 @WebServlet(name = "ProductServlet2", value = "/ProductServlet")
 public class ProductServlet2 extends HttpServlet {

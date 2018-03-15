@@ -1,12 +1,9 @@
 package top.liyf.mywebstore.controller;
 
 import org.apache.commons.beanutils.BeanUtils;
-import top.liyf.mywebstore.domain.Category;
-import top.liyf.mywebstore.domain.Product;
+import top.liyf.mywebstore.entity.Category;
 import top.liyf.mywebstore.service.CategoryService;
-import top.liyf.mywebstore.service.ProductService;
 import top.liyf.mywebstore.service.impl.CategoryServiceImpl;
-import top.liyf.mywebstore.service.impl.ProductServiceImpl;
 import top.liyf.mywebstore.util.Page;
 
 import javax.servlet.ServletException;

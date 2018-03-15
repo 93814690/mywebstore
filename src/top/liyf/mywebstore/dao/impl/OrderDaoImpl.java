@@ -4,7 +4,7 @@ import org.apache.commons.dbutils.QueryRunner;
 import org.apache.commons.dbutils.handlers.BeanHandler;
 import org.apache.commons.dbutils.handlers.BeanListHandler;
 import top.liyf.mywebstore.dao.OrderDao;
-import top.liyf.mywebstore.domain.Order;
+import top.liyf.mywebstore.entity.Order;
 import top.liyf.mywebstore.util.C3P0Util;
 import top.liyf.mywebstore.util.TransactionManager;
 

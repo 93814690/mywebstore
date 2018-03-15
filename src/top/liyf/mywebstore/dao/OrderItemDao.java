@@ -1,6 +1,6 @@
 package top.liyf.mywebstore.dao;
 
-import top.liyf.mywebstore.domain.OrderItem;
+import top.liyf.mywebstore.entity.OrderItem;
 
 import java.sql.SQLException;
 import java.util.List;

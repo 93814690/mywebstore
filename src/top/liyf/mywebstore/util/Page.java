@@ -1,7 +1,5 @@
 package top.liyf.mywebstore.util;
 
-import top.liyf.mywebstore.domain.Product;
-
 import java.util.List;
 
 public class Page<T> {

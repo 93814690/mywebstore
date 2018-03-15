@@ -2,7 +2,7 @@ package top.liyf.mywebstore.service.impl;
 
 import top.liyf.mywebstore.dao.AdminDao;
 import top.liyf.mywebstore.dao.impl.AdminDaoImpl;
-import top.liyf.mywebstore.domain.Admin;
+import top.liyf.mywebstore.entity.Admin;
 import top.liyf.mywebstore.service.AdminService;
 import top.liyf.mywebstore.util.Page;
 

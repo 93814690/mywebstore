@@ -1,7 +1,6 @@
 package top.liyf.mywebstore.service;
 
-import top.liyf.mywebstore.domain.Category;
-import top.liyf.mywebstore.domain.Product;
+import top.liyf.mywebstore.entity.Category;
 import top.liyf.mywebstore.util.Page;
 
 import java.sql.SQLException;

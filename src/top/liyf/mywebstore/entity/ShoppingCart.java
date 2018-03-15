@@ -1,4 +1,4 @@
-package top.liyf.mywebstore.domain;
+package top.liyf.mywebstore.entity;
 
 import java.util.List;
 

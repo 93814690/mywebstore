@@ -1,6 +1,6 @@
 package top.liyf.mywebstore.controller;
 
-import top.liyf.mywebstore.domain.Category;
+import top.liyf.mywebstore.entity.Category;
 import top.liyf.mywebstore.service.CategoryService;
 import top.liyf.mywebstore.service.impl.CategoryServiceImpl;
 

@@ -5,7 +5,7 @@ import org.apache.commons.dbutils.handlers.BeanHandler;
 import org.apache.commons.dbutils.handlers.BeanListHandler;
 import org.apache.commons.dbutils.handlers.ScalarHandler;
 import top.liyf.mywebstore.dao.ProductDao;
-import top.liyf.mywebstore.domain.Product;
+import top.liyf.mywebstore.entity.Product;
 import top.liyf.mywebstore.util.C3P0Util;
 import top.liyf.mywebstore.util.TransactionManager;
 

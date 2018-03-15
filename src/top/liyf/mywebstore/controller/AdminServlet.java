@@ -1,6 +1,6 @@
 package top.liyf.mywebstore.controller;
 
-import top.liyf.mywebstore.domain.Admin;
+import top.liyf.mywebstore.entity.Admin;
 import top.liyf.mywebstore.service.AdminService;
 import top.liyf.mywebstore.service.impl.AdminServiceImpl;
 import top.liyf.mywebstore.util.Page;

@@ -3,7 +3,7 @@ package top.liyf.mywebstore.dao.impl;
 import org.apache.commons.dbutils.QueryRunner;
 import org.apache.commons.dbutils.handlers.BeanListHandler;
 import top.liyf.mywebstore.dao.OrderItemDao;
-import top.liyf.mywebstore.domain.OrderItem;
+import top.liyf.mywebstore.entity.OrderItem;
 import top.liyf.mywebstore.util.C3P0Util;
 import top.liyf.mywebstore.util.TransactionManager;
 

@@ -1,7 +1,5 @@
 package top.liyf.mywebstore.util;
 
-import top.liyf.mywebstore.domain.User;
-
 import java.io.File;
 import java.io.PrintWriter;
 import java.io.StringWriter;

@@ -1,10 +1,10 @@
 package top.liyf.mywebstore.controller;
 
 import org.apache.commons.beanutils.BeanUtils;
-import top.liyf.mywebstore.domain.Product;
-import top.liyf.mywebstore.domain.ShoppingCart;
-import top.liyf.mywebstore.domain.ShoppingCartItem;
-import top.liyf.mywebstore.domain.User;
+import top.liyf.mywebstore.entity.Product;
+import top.liyf.mywebstore.entity.ShoppingCart;
+import top.liyf.mywebstore.entity.ShoppingCartItem;
+import top.liyf.mywebstore.entity.User;
 import top.liyf.mywebstore.service.ProductService;
 import top.liyf.mywebstore.service.ShoppingService;
 import top.liyf.mywebstore.service.impl.ProductServiceImpl;
