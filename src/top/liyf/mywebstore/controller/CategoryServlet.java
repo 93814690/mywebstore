@@ -70,9 +70,9 @@ public class CategoryServlet extends HttpServlet {
         try {
             Category category = categoryService.getCategoryByCname(cname);
             if (category != null) {
-                response.getWriter().print("该品牌已存在！");
+                response.getWriter().print("1");
             } else {
-                response.getWriter().print("");
+                response.getWriter().print("0");
             }
         } catch (SQLException e) {
             e.printStackTrace();

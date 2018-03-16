@@ -47,23 +47,40 @@
 
     -->
   </style>
-
+  <script src="http://apps.bdimg.com/libs/jquery/1.11.3/jquery.min.js"></script>
   <script type="text/javascript">
-      function checkCategory() {
-          var cname = document.getElementById("cname").value;
-//          alert(cname);
-          var request = new XMLHttpRequest();
-          request.onreadystatechange = function () {
-              if (request.readyState === 4) {
-                  if (request.status === 200) {
-                      document.getElementById("checkCname").innerHTML = request.responseText;
-                  }
-              }
-          };
-          request.open("POST", "${pageContext.request.contextPath }/admin/CategoryServlet");
-          request.setRequestHeader("CONTENT-TYPE","application/x-www-form-urlencoded");
-          request.send("op=checkCname&cname="+cname);
+      <%--function checkCategory() {--%>
+          <%--var cname = document.getElementById("cname").value;--%>
+<%--//          alert(cname);--%>
+          <%--var request = new XMLHttpRequest();--%>
+          <%--request.onreadystatechange = function () {--%>
+              <%--if (request.readyState === 4) {--%>
+                  <%--if (request.status === 200) {--%>
+                      <%--document.getElementById("checkCname").innerHTML = request.responseText;--%>
+                  <%--}--%>
+              <%--}--%>
+          <%--};--%>
+          <%--request.open("POST", "${pageContext.request.contextPath }/admin/CategoryServlet");--%>
+          <%--request.setRequestHeader("CONTENT-TYPE","application/x-www-form-urlencoded");--%>
+          <%--request.send("op=checkCname&cname="+cname);--%>
+      <%--}--%>
 
+      //使用jQuery
+//      $(document).ready(function () {
+      //          checkCategory();
+      //      });
+      function checkCategory(){
+          var cname = $('#cname').val();
+          var url = "${pageContext.request.contextPath }/admin/CategoryServlet?op=checkCname&cname="+cname;
+//          alert(url)
+          $.get(url,function (str) {
+              if (str == '1'){
+                  $('#checkCname').html("该品牌已存在！").css("color","red");
+              }
+              if (str == '0'){
+                  $('#checkCname').html("该品牌可以添加！").css("color","green");
+              }
+          });
       }
   </script>
 
@@ -81,21 +98,17 @@
         <table width="100%" border="0" cellspacing="0" cellpadding="0">
           <tr>
             <td height="24" bgcolor="#353c44">
-              <table width="100%"
-                     border="0" cellspacing="0" cellpadding="0">
+              <table width="100%" border="0" cellspacing="0" cellpadding="0">
                 <tr>
                   <td>
-                    <table width="100%" border="0" cellspacing="0"
-                           cellpadding="0">
+                    <table width="100%" border="0" cellspacing="0" cellpadding="0">
                       <tr>
                         <td width="6%" height="19" valign="bottom">
-                          <div
-                              align="center">
+                          <div align="center">
                             <img src="images/tb.gif" width="14" height="14"/>
                           </div>
                         </td>
-                        <td width="94%" valign="bottom"><span class="STYLE1">
-														增加分类</span>
+                        <td width="94%" valign="bottom"><span class="STYLE1">增加分类</span>
                         </td>
                       </tr>
                     </table>
@@ -123,27 +136,18 @@
                cellspacing="1" bgcolor="#a8c7ce">
           <tr>
             <td width="4%" height="20" bgcolor="d3eaef" class="STYLE10">
-              <div
-                  align="center">
-                <input type="checkbox" name="checkbox" id="checkbox11"/>
-              </div>
+              <div align="center"></div>
             </td>
             <td width="10%" height="20" bgcolor="d3eaef" class="STYLE6">
-              <div
-                  align="center">
+              <div align="center">
                 <span class="STYLE10"><span>品牌名：</span></span>
               </div>
             </td>
             <td width="80%" height="20" bgcolor="d3eaef" class="STYLE6">
-
-              <div
-                  align="left">
+              <div align="left">
                 <span style="color:red">*</span>
-
-                <input type="text" name="cname" id="cname" value="${cname}" onblur="checkCategory()"/>
+                <input type="text" name="cname" id="cname" value="${cname}" onblur="checkCategory()" />
                 <span id="checkCname" style="color:red"></span>
-
-
               </div>
             </td>
 
