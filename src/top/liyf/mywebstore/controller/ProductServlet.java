@@ -67,10 +67,30 @@ public class ProductServlet extends HttpServlet {
                     multiConditionSearch2(request, response);
                     break;
 
+                case "checkPid":
+                    checkPid(request, response);
+                    break;
+
                 default:
                     break;
             }
         }
+    }
+
+    private void checkPid(HttpServletRequest request, HttpServletResponse response) throws IOException {
+        String pid = request.getParameter("pid");
+        try {
+            Product productByPid = productService.findProductByPid(pid);
+//            System.out.println("productByPid = " + productByPid);
+            if (productByPid != null) {
+                response.getWriter().print("1");
+            } else {
+                response.getWriter().print("0");
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
     }
 
     private void multiConditionSearch2(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -122,12 +142,12 @@ public class ProductServlet extends HttpServlet {
         if (pidList == null) {
             response.getWriter().println("选中为空，请重新选择!");
             response.setHeader("refresh", "2;url=" + request.getContextPath() + "/admin/ProductServlet?op=findAllProduct&num=1");
-        } else{
+        } else {
             try {
                 boolean deleteMulti = productService.deleteMulti(pidList);
                 if (deleteMulti) {
                     response.getWriter().println("删除成功！即将返回");
-                }else {
+                } else {
                     response.getWriter().println("删除失败！即将返回");
                 }
                 response.setHeader("refresh", "2;url=" + request.getContextPath() + "/admin/ProductServlet?op=findAllProduct&num=1");
@@ -172,9 +192,9 @@ public class ProductServlet extends HttpServlet {
                     String name = item.getFieldName();
                     String value = item.getString("utf-8");
                     parameterMap.put(name, new String[]{value});
-                }else {
-                        String picName = processUploadedFile(item,oldImgurl);
-                        parameterMap.put("imgurl", new String[]{picName});
+                } else {
+                    String picName = processUploadedFile(item, oldImgurl);
+                    parameterMap.put("imgurl", new String[]{picName});
                 }
             }
 
@@ -254,7 +274,7 @@ public class ProductServlet extends HttpServlet {
                     String name = item.getFieldName();
                     String value = item.getString("utf-8");
                     parameterMap.put(name, new String[]{value});
-                }else {
+                } else {
                     String picName = processUploadedFile(item, "");
                     parameterMap.put("imgurl", new String[]{picName});
                 }
@@ -288,7 +308,7 @@ public class ProductServlet extends HttpServlet {
         } else {
             Utils.deleteImg(oldImgurl);
             String id = UUID.randomUUID().toString();
-            String fileName = "pic-" + id +"-"+ name;
+            String fileName = "pic-" + id + "-" + name;
             int code = fileName.hashCode();
             String hexString = Integer.toHexString(code);
             char[] charArray = hexString.toCharArray();

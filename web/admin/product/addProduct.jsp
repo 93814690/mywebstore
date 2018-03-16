@@ -53,6 +53,18 @@
           var value = document.getElementById("st").value;
           document.getElementById("pid").value = value;
       }
+      function checkPid() {
+          var pid = $('#pid').val();
+          var url = "${pageContext.request.contextPath }/admin/ProductServlet?op=checkPid&pid="+pid;
+          $.get(url, function (str) {
+              if (str == '1'){
+                  $('#checkPid').html("该商品号已存在！").css("color","red");
+              }
+              if (str == '0'){
+                  $('#checkPid').html("该商品号可以使用！").css("color","green");
+              }
+          })
+      }
   </script>
 </head>
 
@@ -76,7 +88,7 @@
                         <td width="6%" height="19" valign="bottom">
                           <div
                               align="center">
-                            <img src="images/tb.gif" width="14" height="14"/>
+                            <img src="${pageContext.request.contextPath }/admin/images/tb.gif" width="14" height="14"/>
                           </div>
                         </td>
                         <td width="94%" valign="bottom"><span class="STYLE1">
@@ -133,8 +145,7 @@
 
           <tr>
             <td width="4%" height="20" bgcolor="d3eaef" class="STYLE10">
-              <div
-                  align="center">
+              <div align="center">
                 <input type="checkbox" name="checkbox" id="checkbox11"/>
               </div>
             </td>
@@ -146,7 +157,8 @@
             <td width="80%" height="20" bgcolor="d3eaef" class="STYLE6">
               <div align="left">
 
-                <input type="text" name="pid" id="pid"/>
+                <input type="text" name="pid" id="pid" onblur="checkPid()"/>
+                <span id="checkPid"></span>
 
               </div>
             </td>
