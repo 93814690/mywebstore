@@ -11,21 +11,35 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!--webfonts-->
   <!--//webfonts-->
-  <script src="js/setDate.js" type="text/javascript"></script>
+  <script src="http://apps.bdimg.com/libs/jquery/1.11.3/jquery.min.js"></script>
   <script type="text/javascript">
       function checkUsername() {
-          var username = document.getElementById("username").value;
-          var request = new XMLHttpRequest();
-          request.onreadystatechange = function () {
-              if (request.readyState == 4) {
-                  if (request.status == 200) {
-                      document.getElementById("checkUsername").innerHTML = request.responseText;
-                  }
+          <%--var username = document.getElementById("username").value;--%>
+          <%--var request = new XMLHttpRequest();--%>
+          <%--request.onreadystatechange = function () {--%>
+              <%--if (request.readyState == 4) {--%>
+                  <%--if (request.status == 200) {--%>
+                      <%--document.getElementById("checkUsername").innerHTML = request.responseText;--%>
+                  <%--}--%>
+              <%--}--%>
+          <%--};--%>
+          <%--request.open("POST", "${pageContext.request.contextPath }/UserServlet");--%>
+          <%--request.setRequestHeader("CONTENT-TYPE", "application/x-www-form-urlencoded");--%>
+          <%--request.send("op=checkUsername&username=" + username);--%>
+
+          var username = $('#username').val();
+          var url = "${pageContext.request.contextPath}/UserServlet";
+          $.post(url, {
+              op: "checkUsername",
+              username: username
+          },function (str) {
+              if (str === '1') {
+                  $('#checkUsername').html("该用户名已存在！").css('color', 'red');
               }
-          };
-          request.open("POST", "${pageContext.request.contextPath }/UserServlet");
-          request.setRequestHeader("CONTENT-TYPE", "application/x-www-form-urlencoded");
-          request.send("op=checkUsername&username=" + username);
+              if (str === '0') {
+                  $('#checkUsername').html("该用户名可以使用！").css('color', 'green');
+              }
+          });
       }
 
       function checkEmail() {

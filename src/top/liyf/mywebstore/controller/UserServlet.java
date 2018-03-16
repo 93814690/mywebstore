@@ -191,9 +191,9 @@ public class UserServlet extends HttpServlet {
         String username = request.getParameter("username");
         try {
             if (userService.usernameExist(username)) {
-                response.getWriter().print("用户名已存在");
+                response.getWriter().print("1");
             } else {
-                response.getWriter().print("");
+                response.getWriter().print("0");
             }
         } catch (SQLException e) {
             e.printStackTrace();
