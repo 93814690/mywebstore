@@ -98,7 +98,9 @@ public class ProductServiceImpl implements ProductService {
     @Override
     public Product findProductByPid(String pid) throws SQLException {
         Product product = productDao.findProductByPid(pid);
-        addCategory(product);
+        if (product != null) {
+            addCategory(product);
+        }
         return product;
     }
 
