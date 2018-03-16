@@ -121,13 +121,13 @@ public class AdminServlet extends HttpServlet {
         String username = request.getParameter("username");
         String password = request.getParameter("password");
         String repass = request.getParameter("repass");
-        String wrongPath = "/admin/admin/addAdmin.jsp";
-        if (baseCheck(request, response, username, password, repass, wrongPath)) {
+        String path = "/admin/admin/addAdmin.jsp";
+        if (baseCheck(request, response, username, password, repass, path)) {
             return;
         }
         try {
             if (checkAdminUsernameExist(request, response, username)) {
-                response.setHeader("refresh", "2;url=" + request.getContextPath() + "/admin/admin/addAdmin.jsp");
+                response.setHeader("refresh", "2;url=" + request.getContextPath() + path);
                 return;
             }
             Boolean addAdmin = adminService.addAdmin(username, password);
@@ -136,7 +136,7 @@ public class AdminServlet extends HttpServlet {
                 response.setHeader("refresh", "2;url=" + request.getContextPath() + "/admin/AdminServlet?op=findAllAdmin&num=1");
             } else {
                 response.getWriter().println("添加失败！");
-                response.setHeader("refresh", "2;url=" + request.getContextPath() + "/admin/admin/addAdmin.jsp");
+                response.setHeader("refresh", "2;url=" + request.getContextPath() + path);
             }
         } catch (SQLException e) {
             e.printStackTrace();
@@ -152,14 +152,14 @@ public class AdminServlet extends HttpServlet {
         return false;
     }
 
-    private boolean baseCheck(HttpServletRequest request, HttpServletResponse response, String username, String password, String repass, String wrongPath) throws IOException {
+    private boolean baseCheck(HttpServletRequest request, HttpServletResponse response, String username, String password, String repass, String path) throws IOException {
         if ("".equals(username) || "".equals(password) || "".equals(repass)) {
             response.getWriter().println("不能为空，请重填！即将返回");
-            response.setHeader("refresh", "2;url=" + request.getContextPath() + wrongPath);
+            response.setHeader("refresh", "2;url=" + request.getContextPath() + path);
             return true;
         } else if (!password.equals(repass)) {
             response.getWriter().println("两次密码不一致，请重填！即将返回");
-            response.setHeader("refresh", "2;url=" + request.getContextPath() + wrongPath);
+            response.setHeader("refresh", "2;url=" + request.getContextPath() + path);
             return true;
         }
         return false;
