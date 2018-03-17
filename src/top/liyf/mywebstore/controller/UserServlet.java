@@ -206,7 +206,7 @@ public class UserServlet extends HttpServlet {
             User msg = new User();
             msg.setError(new User());
             HttpSession session = request.getSession();
-            String checkcode_session = (String) session.getAttribute("checkcode_session");
+            String kaptchaExpected = (String)request.getSession().getAttribute(com.google.code.kaptcha.Constants.KAPTCHA_SESSION_KEY);
 
             BeanUtils.populate(user, request.getParameterMap());
 
@@ -216,10 +216,10 @@ public class UserServlet extends HttpServlet {
             String adminRequest = "http://localhost/mywebstore/admin/left.jsp";
             System.out.println("referer = " + referer);
             boolean hasError = userCheck(user, msg);
-            String verifycode = request.getParameter("verifycode");
-            if (!checkcode_session.equals(verifycode)) {
+            String kaptcha = request.getParameter("kaptcha");
+            if (!kaptchaExpected.equals(kaptcha)) {
                 msg.getError().setCheckcode("验证码不正确");
-                System.out.println("verifycode = " + verifycode);
+                System.out.println("kaptcha = " + kaptcha);
                 hasError = true;
             }
             if (hasError) {

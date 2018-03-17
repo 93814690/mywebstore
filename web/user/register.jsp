@@ -66,6 +66,12 @@
           }
       }
 
+      //点击更换验证码
+      $(function(){
+          $('#kaptchaImage').click(function () {
+              $(this).attr('src', '${pageContext.request.contextPath}/kaptcha.jpg?' + Math.floor(Math.random()*100) );
+          })
+      });
   </script>
 </head>
 
@@ -113,9 +119,9 @@
       </li>
       <li>
         ${msg.error.checkcode }<br/>
-        <input type="text" placeholder="验证码" name="verifycode" value="" size="15" required="required"
+        <input type="text" placeholder="验证码" name="kaptcha" value="" size="15" required="required"
                style="width: 80px"/>
-        <img src="${pageContext.request.contextPath}/code.png" width="120" heigth="50">
+        <img src="${pageContext.request.contextPath}/kaptcha.jpg" id="kaptchaImage" width="120" >
         <div class="clear"></div>
       </li>
       <li>

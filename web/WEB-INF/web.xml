@@ -4,6 +4,17 @@
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
          version="3.1">
 
-
+    <servlet>
+        <servlet-name>Kaptcha</servlet-name>
+        <servlet-class>com.google.code.kaptcha.servlet.KaptchaServlet</servlet-class>
+        <init-param>
+            <param-name>kaptcha.textproducer.char.length</param-name>
+            <param-value>4</param-value>
+        </init-param>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Kaptcha</servlet-name>
+        <url-pattern>/kaptcha.jpg</url-pattern>
+    </servlet-mapping>
 
 </web-app>
