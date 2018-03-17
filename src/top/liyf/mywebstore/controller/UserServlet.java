@@ -144,7 +144,7 @@ public class UserServlet extends HttpServlet {
         }
         try {
             String time = userService.getUserUpdateTime(username);
-            password = Utils.newPassword(password, time);
+            password = Utils.newPassword(password, time.replace(".0", ""));
             System.out.println("password = " + password);
             User user = userService.login(username, password);
             if (!Utils.notNUll(user)) {
