@@ -8,10 +8,12 @@
   <title>创建一个免费的新帐户！</title>
   <meta charset="utf-8">
   <link href="${pageContext.request.contextPath }/user/css/style.css" rel='stylesheet' type='text/css'/>
+  <link href="${pageContext.request.contextPath }/css/jquery-ui-1.10.4.custom.min.css" rel="stylesheet"/>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!--webfonts-->
   <!--//webfonts-->
   <script src="http://apps.bdimg.com/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="${pageContext.request.contextPath }/js/jquery-ui-1.10.4.custom.min.js"></script>
   <script type="text/javascript">
       function checkUsername() {
           <%--var username = document.getElementById("username").value;--%>
@@ -72,6 +74,18 @@
               $(this).attr('src', '${pageContext.request.contextPath}/kaptcha.jpg?' + Math.floor(Math.random()*100) );
           })
       });
+
+      $(function () {
+          $('#birthday').datepicker({
+              dayNamesMin: ['日','一','二','三','四','五','六'],
+              dateFormat: 'yy-mm-dd',
+              showOtherMonths: true,
+              changeMonth: true,
+              changeYear: true,
+              yearRange: "1940:2018"
+          });
+
+      });
   </script>
 </head>
 
@@ -114,7 +128,7 @@
       <li>
         ${msg.error.birthday }<span id="checkBirthday"></span><br/>
         <input type="text" placeholder="出生日期:1990-01-01" name="birthday" id="birthday" value="${msg.birthday}"
-               onblur="checkBirthday()" size="15"/>
+               size="15"/>
         <div class="clear"></div>
       </li>
       <li>
